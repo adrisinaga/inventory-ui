@@ -7,4 +7,10 @@ const nextConfig = {
   images: { unoptimized: true },
 };
 
-module.exports = nextConfig;
+// next.config.js
+module.exports = {
+  webpack: (config) => {
+    config.ignoreWarnings = [/punycode/];
+    return config;
+  },
+};
